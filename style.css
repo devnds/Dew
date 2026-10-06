@@ -1,0 +1,160 @@
+/* Atividade 9 - Propriedades CSS */
+* { box-sizing: border-box; }
+
+body {
+    padding: 20px;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 { text-align: center; }
+h1 { text-transform: uppercase; font-size: 30px; }
+p::first-letter { text-transform: uppercase; }
+a:hover { opacity: 0.5; }
+
+a { color: #2563eb; transition: .2s ease; }
+
+/* Banner da página principal */
+.banner {
+    min-height: 300px;
+    padding: 60px 20px;
+    margin-bottom: 28px;
+    background-image: linear-gradient(rgba(10,20,45,.35), rgba(10,20,45,.65)), url("https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1400&q=85");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 18px 40px rgba(30,64,175,.18);
+}
+
+.banner h1 {
+    margin: 0;
+    padding: 24px 32px;
+    color: #fff;
+    background: rgba(15,23,42,.72);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    letter-spacing: 1px;
+}
+
+.hide { display: none; }
+
+/* Navegação */
+.nav {
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px;
+    margin: 0 auto 30px;
+    max-width: 720px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid #dbe4f0;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(15,23,42,.12);
+    list-style: none;
+}
+
+.nav li { margin: 0; }
+.nav a {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #fff;
+    background: #2563eb;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 5px 12px rgba(37,99,235,.22);
+}
+
+/* Categorias */
+body:not(.page-products) h1 {
+    margin: 10px 0 6px;
+    color: #0f172a;
+}
+
+body:not(.page-products) h2 {
+    margin: 0 0 25px;
+    color: #2563eb;
+    font-size: 24px;
+}
+
+body:not(.page-products) ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    padding: 0;
+    list-style: none;
+}
+
+body:not(.page-products) li {
+    margin: 0;
+    padding: 24px;
+    background: rgba(255,255,255,.96);
+    border: 1px solid #dce5f0;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(15,23,42,.09);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body:not(.page-products) li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(15,23,42,.15);
+}
+
+body:not(.page-products) img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 150px;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+body:not(.page-products) h3 { min-height: 48px; margin: 10px 0; }
+body:not(.page-products) h4 { margin: 14px 0 7px; color: #16a34a; }
+body:not(.page-products) h5 { margin: 0 0 18px; color: #64748b; }
+
+body:not(.page-products) li a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 22px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body:not(.page-products) > a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 11px 24px;
+    color: #fff;
+    background: #0f172a;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    body { margin: 8px; padding: 12px; }
+    .banner { min-height: 240px; padding: 30px 15px; }
+    .banner h1 { font-size: 24px; padding: 18px; }
+    .nav { flex-direction: column; }
+    .nav a { display: block; text-align: center; }
+}
