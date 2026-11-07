@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Média</title>
+</head>
+<body>
+
+    <h1>Calculadora de Média Acadêmica</h1>
+
+    <form id="formulario">
+        <label>Nome:</label>
+        <input type="text" id="nome" required>
+
+        <br><br>
+
+        <label>Nota 1:</label>
+        <input type="number" id="nota1" min="0" max="10" step="0.1" required>
+
+        <br><br>
+
+        <label>Nota 2:</label>
+        <input type="number" id="nota2" min="0" max="10" step="0.1" required>
+
+        <br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let nota1 = Number(document.getElementById("nota1").value);
+            let nota2 = Number(document.getElementById("nota2").value);
+
+            let media = (nota1 + nota2) / 2;
+
+            document.getElementById("resultado").innerHTML =
+                nome + " - média: " + media.toFixed(2);
+        });
+    </script>
+
+</body>
+</html>
